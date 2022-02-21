@@ -1,0 +1,1 @@
+# go-anilist-api-client
