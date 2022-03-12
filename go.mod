@@ -1,4 +1,4 @@
-module anilistapi
+module github.com/JotaEspig/go-anilist-api-client
 
 go 1.17
 
