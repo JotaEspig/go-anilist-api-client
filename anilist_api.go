@@ -8,7 +8,8 @@ import (
 
 const url string = "https://graphql.anilist.co"
 
-//Make a request to the API
+// Make a post request to the API, and the result goes to target variable.
+//	target must be a pointer to a one of the response structs
 func post(query string, variables map[string]interface{}, target interface{}) error {
 	client := graphql.NewClient(url)
 	req := graphql.NewRequest(query)
