@@ -33,11 +33,8 @@ func SearchManga(search string, page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &manga)
-	if err != nil {
-		return manga, err
-	}
 
-	return manga, nil
+	return manga, err
 }
 
 func TopMangaByScore(page int, perPage int) (AniManga, error) {
@@ -73,11 +70,8 @@ func TopMangaByScore(page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &manga)
-	if err != nil {
-		return manga, err
-	}
 
-	return manga, nil
+	return manga, err
 }
 
 func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
@@ -112,11 +106,8 @@ func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &manga)
-	if err != nil {
-		return manga, err
-	}
 
-	return manga, nil
+	return manga, err
 }
 
 func GetManga(id int) (FullManga, error) {
@@ -158,9 +149,6 @@ func GetManga(id int) (FullManga, error) {
 	}
 
 	err := post(query, variables, &manga)
-	if err != nil {
-		return manga, err
-	}
 
-	return manga, nil
+	return manga, err
 }
