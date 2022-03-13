@@ -6,7 +6,7 @@ import (
 	"github.com/machinebox/graphql"
 )
 
-var url string = "https://graphql.anilist.co"
+const url string = "https://graphql.anilist.co"
 
 //Make a request to the API
 func post(query string, variables map[string]interface{}, target interface{}) error {
