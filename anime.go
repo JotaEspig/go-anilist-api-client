@@ -33,11 +33,8 @@ func SearchAnime(search string, page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &anime)
-	if err != nil {
-		return anime, err
-	}
 
-	return anime, nil
+	return anime, err
 }
 
 func TopAnimeByScore(page int, perPage int) (AniManga, error) {
@@ -73,11 +70,8 @@ func TopAnimeByScore(page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &anime)
-	if err != nil {
-		return anime, err
-	}
 
-	return anime, nil
+	return anime, err
 }
 
 func TopAnimeByPopularity(page int, perPage int) (AniManga, error) {
@@ -112,11 +106,8 @@ func TopAnimeByPopularity(page int, perPage int) (AniManga, error) {
 	}
 
 	err := post(query, variables, &anime)
-	if err != nil {
-		return anime, err
-	}
 
-	return anime, nil
+	return anime, err
 }
 
 func GetAnime(id int) (FullAnime, error) {
@@ -165,9 +156,6 @@ func GetAnime(id int) (FullAnime, error) {
 	}
 
 	err := post(query, variables, &anime)
-	if err != nil {
-		return anime, err
-	}
 
-	return anime, nil
+	return anime, err
 }
