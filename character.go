@@ -31,11 +31,8 @@ func SearchCharacter(search string, page int, perPage int) (Character, error) {
 	}
 
 	err := post(query, variables, &character)
-	if err != nil {
-		return character, err
-	}
 
-	return character, nil
+	return character, err
 }
 
 func TopCharactersByFavourites(page int, perPage int) (Character, error) {
@@ -69,11 +66,8 @@ func TopCharactersByFavourites(page int, perPage int) (Character, error) {
 	}
 
 	err := post(query, variables, &character)
-	if err != nil {
-		return character, err
-	}
 
-	return character, nil
+	return character, err
 }
 
 func GetCharacter(id int) (FullCharacter, error) {
@@ -116,9 +110,6 @@ func GetCharacter(id int) (FullCharacter, error) {
 	}
 
 	err := post(query, variables, &character)
-	if err != nil {
-		return character, err
-	}
 
-	return character, nil
+	return character, err
 }
