@@ -2,7 +2,7 @@ package anilistapi
 
 // Gets a response that contains a list of characters from anilist
 func SearchCharacter(search string, page int, perPage int) (*Character, error) {
-	var character *Character = &Character{}
+	var char = &Character{}
 
 	checkPageValues(&page, &perPage)
 
@@ -31,15 +31,15 @@ func SearchCharacter(search string, page int, perPage int) (*Character, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, character)
+	err := post(query, variables, char)
 
-	return character, err
+	return char, err
 }
 
 // Gets a response that contains a list of characters
 // sorted according to their amount of favourites on anilist
 func TopCharactersByFavourites(page int, perPage int) (*Character, error) {
-	var character *Character = &Character{}
+	var char = &Character{}
 
 	checkPageValues(&page, &perPage)
 
@@ -68,15 +68,15 @@ func TopCharactersByFavourites(page int, perPage int) (*Character, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, character)
+	err := post(query, variables, char)
 
-	return character, err
+	return char, err
 }
 
 // Gets a response that contains a character from anilist,
 // according to its anilist id
 func GetCharacter(id int) (*FullCharacter, error) {
-	var character *FullCharacter = &FullCharacter{}
+	var char = &FullCharacter{}
 
 	query := `
 	query ($id: Int) {
@@ -114,7 +114,7 @@ func GetCharacter(id int) (*FullCharacter, error) {
 		"id": id,
 	}
 
-	err := post(query, variables, character)
+	err := post(query, variables, char)
 
-	return character, err
+	return char, err
 }
