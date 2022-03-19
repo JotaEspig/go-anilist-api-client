@@ -1,5 +1,6 @@
 package anilistapi
 
+// Gets a response that contains a list of manga from anilist
 func SearchManga(search string, page int, perPage int) (AniManga, error) {
 	var manga AniManga
 
@@ -37,6 +38,8 @@ func SearchManga(search string, page int, perPage int) (AniManga, error) {
 	return manga, err
 }
 
+// Gets a response that contains a list of manga
+// sorted according to their anilist score
 func TopMangaByScore(page int, perPage int) (AniManga, error) {
 	var manga AniManga
 
@@ -74,6 +77,8 @@ func TopMangaByScore(page int, perPage int) (AniManga, error) {
 	return manga, err
 }
 
+// Gets a response that contains a list of manga
+// sorted according to their anilist popularity
 func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
 	var manga AniManga
 
@@ -110,6 +115,8 @@ func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
 	return manga, err
 }
 
+// Gets a response that contains a manga from anilist,
+// according to its anilist id
 func GetManga(id int) (FullManga, error) {
 	var manga FullManga
 
