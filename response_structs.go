@@ -54,7 +54,7 @@ type pageInfo struct {
 
 // Represents data from either an anime or a manga (limited)
 type media struct {
-	Id           int    `json:"id"`
+	ID           int    `json:"id"`
 	Title        title  `json:"title"`
 	Format       string `json:"format"`
 	AverageScore int    `json:"averageScore"`
@@ -63,14 +63,14 @@ type media struct {
 
 // Represents data from a character (limited)
 type characterMedia struct {
-	Id         int  `json:"id"`
+	ID         int  `json:"id"`
 	Name       name `json:"name"`
 	Favourites int  `json:"favourites"`
 }
 
 // Represents data from an anime (contains full data)
 type fullAnimeMedia struct {
-	Id           int        `json:"id"`
+	ID           int        `json:"id"`
 	Title        fullTitle  `json:"title"`
 	Format       string     `json:"format"`
 	Episodes     int        `json:"episodes"`
@@ -88,7 +88,7 @@ type fullAnimeMedia struct {
 
 // Represents data from a manga (contains full data)
 type fullMangaMedia struct {
-	Id           int        `json:"id"`
+	ID           int        `json:"id"`
 	Title        fullTitle  `json:"title"`
 	Format       string     `json:"format"`
 	Chapters     int        `json:"chapters"`
@@ -106,7 +106,7 @@ type fullMangaMedia struct {
 
 // Represents data from a character (contains full data)
 type fullCharacterMedia struct {
-	Id          int         `json:"id"`
+	ID          int         `json:"id"`
 	Name        fullName    `json:"name"`
 	Gender      string      `json:"gender"`
 	Age         string      `json:"age"`
