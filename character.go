@@ -1,5 +1,6 @@
 package anilistapi
 
+// Gets a response that contains a list of characters from anilist
 func SearchCharacter(search string, page int, perPage int) (Character, error) {
 	var character Character
 
@@ -35,6 +36,8 @@ func SearchCharacter(search string, page int, perPage int) (Character, error) {
 	return character, err
 }
 
+// Gets a response that contains a list of characters
+// sorted according to their amount of favourites on anilist
 func TopCharactersByFavourites(page int, perPage int) (Character, error) {
 	var character Character
 
@@ -70,6 +73,8 @@ func TopCharactersByFavourites(page int, perPage int) (Character, error) {
 	return character, err
 }
 
+// Gets a response that contains a character from anilist,
+// according to its anilist id
 func GetCharacter(id int) (FullCharacter, error) {
 	var character FullCharacter
 
