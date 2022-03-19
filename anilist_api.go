@@ -8,9 +8,13 @@ import (
 
 const url string = "https://graphql.anilist.co"
 
+type validStruct interface {
+	*AniMangas | *Characters | *FullAnime | *FullManga | *FullCharacter
+}
+
 // Make a post request to the API, and the result goes to target variable.
 //	target must be a pointer to one of the response structs
-func post(query string, vars map[string]interface{}, target interface{}) error {
+func post[pT validStruct](query string, vars map[string]interface{}, target pT) error {
 	client := graphql.NewClient(url)
 	req := graphql.NewRequest(query)
 	for key, value := range vars {

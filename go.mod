@@ -1,6 +1,6 @@
 module github.com/JotaEspig/go-anilist-api-client
 
-go 1.17
+go 1.18
 
 require github.com/machinebox/graphql v0.2.2
 
