@@ -10,10 +10,10 @@ const url string = "https://graphql.anilist.co"
 
 // Make a post request to the API, and the result goes to target variable.
 //	target must be a pointer to one of the response structs
-func post(query string, variables map[string]interface{}, target interface{}) error {
+func post(query string, vars map[string]interface{}, target interface{}) error {
 	client := graphql.NewClient(url)
 	req := graphql.NewRequest(query)
-	for key, value := range variables {
+	for key, value := range vars {
 		req.Var(key, value)
 	}
 	ctx := context.Background()
