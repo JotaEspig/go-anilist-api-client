@@ -2,7 +2,7 @@ package anilistapi
 
 // Gets a response that contains a list of manga from anilist
 func SearchManga(search string, page int, perPage int) (*AniMangas, error) {
-	var manga = &AniMangas{}
+	var mangas = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -33,15 +33,15 @@ func SearchManga(search string, page int, perPage int) (*AniMangas, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, manga)
+	err := post(query, variables, mangas)
 
-	return manga, err
+	return mangas, err
 }
 
 // Gets a response that contains a list of manga
 // sorted according to their anilist score
 func TopMangaByScore(page int, perPage int) (*AniMangas, error) {
-	var manga = &AniMangas{}
+	var mangas = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -72,15 +72,15 @@ func TopMangaByScore(page int, perPage int) (*AniMangas, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, manga)
+	err := post(query, variables, mangas)
 
-	return manga, err
+	return mangas, err
 }
 
 // Gets a response that contains a list of manga
 // sorted according to their anilist popularity
 func TopMangaByPopularity(page int, perPage int) (*AniMangas, error) {
-	var manga = &AniMangas{}
+	var mangas = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -110,9 +110,9 @@ func TopMangaByPopularity(page int, perPage int) (*AniMangas, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, manga)
+	err := post(query, variables, mangas)
 
-	return manga, err
+	return mangas, err
 }
 
 // Gets a response that contains a manga from anilist,
