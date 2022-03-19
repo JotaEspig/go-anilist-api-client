@@ -2,7 +2,7 @@ package anilistapi
 
 // Gets a response that contains a list of anime from anilist
 func SearchAnime(search string, page int, perPage int) (*AniMangas, error) {
-	var anime = &AniMangas{}
+	var animes = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -33,15 +33,15 @@ func SearchAnime(search string, page int, perPage int) (*AniMangas, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, anime)
+	err := post(query, variables, animes)
 
-	return anime, err
+	return animes, err
 }
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist score
 func TopAnimeByScore(page int, perPage int) (*AniMangas, error) {
-	var anime = &AniMangas{}
+	var animes = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -72,15 +72,15 @@ func TopAnimeByScore(page int, perPage int) (*AniMangas, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, anime)
+	err := post(query, variables, animes)
 
-	return anime, err
+	return animes, err
 }
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist popularity
 func TopAnimeByPopularity(page int, perPage int) (*AniMangas, error) {
-	var anime = &AniMangas{}
+	var animes = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -110,9 +110,9 @@ func TopAnimeByPopularity(page int, perPage int) (*AniMangas, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, anime)
+	err := post(query, variables, animes)
 
-	return anime, err
+	return animes, err
 }
 
 // Gets a response that contains an anime from anilist,
