@@ -1,8 +1,8 @@
 package anilistapi
 
 // Gets a response that contains a list of characters from anilist
-func SearchCharacter(search string, page int, perPage int) (*Character, error) {
-	var char = &Character{}
+func SearchCharacter(search string, page int, perPage int) (*Characters, error) {
+	var char = &Characters{}
 
 	checkPageValues(&page, &perPage)
 
@@ -38,8 +38,8 @@ func SearchCharacter(search string, page int, perPage int) (*Character, error) {
 
 // Gets a response that contains a list of characters
 // sorted according to their amount of favourites on anilist
-func TopCharactersByFavourites(page int, perPage int) (*Character, error) {
-	var char = &Character{}
+func TopCharactersByFavourites(page int, perPage int) (*Characters, error) {
+	var char = &Characters{}
 
 	checkPageValues(&page, &perPage)
 

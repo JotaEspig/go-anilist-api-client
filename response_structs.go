@@ -3,12 +3,12 @@ package anilistapi
 // Top level structs
 
 // Contains a page struct that contains animes or mangas
-type AniManga struct {
+type AniMangas struct {
 	Page page `json:"Page"`
 }
 
 //Represents a page struct that contains characters
-type Character struct {
+type Characters struct {
 	Page characterPage `json:"Page"`
 }
 

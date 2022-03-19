@@ -1,8 +1,8 @@
 package anilistapi
 
 // Gets a response that contains a list of anime from anilist
-func SearchAnime(search string, page int, perPage int) (*AniManga, error) {
-	var anime *AniManga = &AniManga{}
+func SearchAnime(search string, page int, perPage int) (*AniMangas, error) {
+	var anime = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -40,8 +40,8 @@ func SearchAnime(search string, page int, perPage int) (*AniManga, error) {
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist score
-func TopAnimeByScore(page int, perPage int) (*AniManga, error) {
-	var anime *AniManga = &AniManga{}
+func TopAnimeByScore(page int, perPage int) (*AniMangas, error) {
+	var anime = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
@@ -79,8 +79,8 @@ func TopAnimeByScore(page int, perPage int) (*AniManga, error) {
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist popularity
-func TopAnimeByPopularity(page int, perPage int) (*AniManga, error) {
-	var anime *AniManga = &AniManga{}
+func TopAnimeByPopularity(page int, perPage int) (*AniMangas, error) {
+	var anime = &AniMangas{}
 
 	checkPageValues(&page, &perPage)
 
