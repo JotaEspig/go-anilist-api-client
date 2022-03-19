@@ -1,8 +1,8 @@
 package anilistapi
 
 // Gets a response that contains a list of manga from anilist
-func SearchManga(search string, page int, perPage int) (AniManga, error) {
-	var manga AniManga
+func SearchManga(search string, page int, perPage int) (*AniManga, error) {
+	var manga *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -33,15 +33,15 @@ func SearchManga(search string, page int, perPage int) (AniManga, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, &manga)
+	err := post(query, variables, manga)
 
 	return manga, err
 }
 
 // Gets a response that contains a list of manga
 // sorted according to their anilist score
-func TopMangaByScore(page int, perPage int) (AniManga, error) {
-	var manga AniManga
+func TopMangaByScore(page int, perPage int) (*AniManga, error) {
+	var manga *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -72,15 +72,15 @@ func TopMangaByScore(page int, perPage int) (AniManga, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, &manga)
+	err := post(query, variables, manga)
 
 	return manga, err
 }
 
 // Gets a response that contains a list of manga
 // sorted according to their anilist popularity
-func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
-	var manga AniManga
+func TopMangaByPopularity(page int, perPage int) (*AniManga, error) {
+	var manga *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -110,15 +110,15 @@ func TopMangaByPopularity(page int, perPage int) (AniManga, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, &manga)
+	err := post(query, variables, manga)
 
 	return manga, err
 }
 
 // Gets a response that contains a manga from anilist,
 // according to its anilist id
-func GetManga(id int) (FullManga, error) {
-	var manga FullManga
+func GetManga(id int) (*FullManga, error) {
+	var manga *FullManga = &FullManga{}
 
 	query := `
 	query ($id: Int) {
@@ -155,7 +155,7 @@ func GetManga(id int) (FullManga, error) {
 		"id": id,
 	}
 
-	err := post(query, variables, &manga)
+	err := post(query, variables, manga)
 
 	return manga, err
 }
