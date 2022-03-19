@@ -1,8 +1,8 @@
 package anilistapi
 
 // Gets a response that contains a list of anime from anilist
-func SearchAnime(search string, page int, perPage int) (AniManga, error) {
-	var anime AniManga
+func SearchAnime(search string, page int, perPage int) (*AniManga, error) {
+	var anime *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -33,15 +33,15 @@ func SearchAnime(search string, page int, perPage int) (AniManga, error) {
 		"perPage": perPage,
 	}
 
-	err := post(query, variables, &anime)
+	err := post(query, variables, anime)
 
 	return anime, err
 }
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist score
-func TopAnimeByScore(page int, perPage int) (AniManga, error) {
-	var anime AniManga
+func TopAnimeByScore(page int, perPage int) (*AniManga, error) {
+	var anime *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -72,15 +72,15 @@ func TopAnimeByScore(page int, perPage int) (AniManga, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, &anime)
+	err := post(query, variables, anime)
 
 	return anime, err
 }
 
 // Gets a response that contains a list of anime
 // sorted according to their anilist popularity
-func TopAnimeByPopularity(page int, perPage int) (AniManga, error) {
-	var anime AniManga
+func TopAnimeByPopularity(page int, perPage int) (*AniManga, error) {
+	var anime *AniManga = &AniManga{}
 
 	checkPageValues(&page, &perPage)
 
@@ -110,15 +110,15 @@ func TopAnimeByPopularity(page int, perPage int) (AniManga, error) {
 		"page":    page,
 	}
 
-	err := post(query, variables, &anime)
+	err := post(query, variables, anime)
 
 	return anime, err
 }
 
 // Gets a response that contains an anime from anilist,
 // according to its anilist id
-func GetAnime(id int) (FullAnime, error) {
-	var anime FullAnime
+func GetAnime(id int) (*FullAnime, error) {
+	var anime *FullAnime = &FullAnime{}
 
 	query := `
 	query ($id: Int) {
@@ -162,7 +162,7 @@ func GetAnime(id int) (FullAnime, error) {
 		"id": id,
 	}
 
-	err := post(query, variables, &anime)
+	err := post(query, variables, anime)
 
 	return anime, err
 }
