@@ -118,7 +118,7 @@ func TopAnimeByPopularity(page int, perPage int) (*AniMangas, error) {
 // Gets a response that contains an anime from anilist,
 // according to its anilist id
 func GetAnime(id int) (*FullAnime, error) {
-	var anime *FullAnime = &FullAnime{}
+	var anime = &FullAnime{}
 
 	query := `
 	query ($id: Int) {

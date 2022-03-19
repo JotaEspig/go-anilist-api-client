@@ -118,7 +118,7 @@ func TopMangaByPopularity(page int, perPage int) (*AniMangas, error) {
 // Gets a response that contains a manga from anilist,
 // according to its anilist id
 func GetManga(id int) (*FullManga, error) {
-	var manga *FullManga = &FullManga{}
+	var manga = &FullManga{}
 
 	query := `
 	query ($id: Int) {
